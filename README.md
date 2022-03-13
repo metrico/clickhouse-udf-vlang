@@ -2,6 +2,16 @@
 
 # ClickHouse V UDF
 
+# ClickHouse NodeJS UDF
+This basic example illustrates a simple `sum` V powered Clickhouse UDF function
+
+##### ⏱️ Why
+> Clickhouse is super fast and already has all the functions one could dream. What is this for?
+
+This example is designed to understand the underlying formats and unleash imagination for integrators.
+
+<br><br>
+
 ### V Function
 Create an simple vlang application:
 - read input from stdin
