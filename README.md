@@ -36,7 +36,7 @@ The final executable size is < ~92KB all inclusive!
 ```
 
 ### ClickHouse UDF
-Create a [UDF Function](https://gist.github.com/lmangani/8beba125968c18c5531bcf2ef6e28dbe#file-vlang_function-xml) to invoke your vlang application
+Create a [UDF Function](https://gist.github.com/lmangani/8beba125968c18c5531bcf2ef6e28dbe#file-vlang_function-xml) to invoke your [vlang application](https://gist.github.com/lmangani/8beba125968c18c5531bcf2ef6e28dbe#file-udf-v)
 - use directory `/var/lib/clickhouse/user-scripts` to store user-scripts
 ```
 <functions>
