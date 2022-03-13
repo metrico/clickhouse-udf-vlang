@@ -1,0 +1,18 @@
+```
+<functions>
+    <function>
+        <type>executable</type>
+        <name>v_sum</name>
+        <return_type>UInt64</return_type>
+        <argument>
+            <type>UInt64</type>
+        </argument>
+        <argument>
+            <type>UInt64</type>
+        </argument>
+        <format>TabSeparated</format>
+        <command>vlang-udf</command>
+        <lifetime>0</lifetime>
+    </function>
+</functions>
+```
