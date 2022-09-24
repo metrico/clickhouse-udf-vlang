@@ -1,17 +1,20 @@
 <img src="https://vlang.io/img/veasel.png" width=420>
 
 # V ClickHouse UDF
-This basic example illustrates a simple `sum` [V](https://vlang.io/) powered [Clickhouse User Defined Function](https://clickhouse.com/docs/en/sql-reference/functions/#executable-user-defined-functions)
+> ClickHouse can call any external executable program or script to process data.
+
+This basic example illustrates a simple `sum` [V](https://vlang.io/) powered function for [Clickhouse UDF](https://clickhouse.com/docs/en/sql-reference/functions/#executable-user-defined-functions) usage
 
 <br>
 
 ### V Function
-Create an simple vlang application:
-- read input from stdin
-- split row values by tabs
-- return some output
+To get started, create an baseline vlang application with the following features:
 
-Example `sum` function:
+- [x] read input from stdin
+- [x] split row values by tabs
+- [x] return some output
+
+Here's an example `sum` function:
 ```
 import os
 
@@ -19,21 +22,22 @@ fn main() {
         // Parse stdin to array
         data := os.get_lines()
         for line in data {
-           // tabSeparated
+           // split tabSeparated values
            tags := line.split('\t')
-           // sum integers & return
+           // sum two integers
            sum := tags[0].int() + tags[1].int()
+           // return a result
            println(sum)
         }
 }
 ```
 
-Compile and store into the UDF script directory:
+Compile and store into the ClickHouse UDF script directory:
 ```
 v -o /var/lib/clickhouse/user-scripts/vlang-udf -prod .
 ```
 
-The final executable size is < ~92KB all inclusive!
+The final static executable size is < ~92KB all inclusive!
 ```
 -rwxr-xr-x   1 root root  92K Mar 13 12:49 vlang-udf*
 ```
@@ -65,7 +69,7 @@ Define the _input and output_ [format](https://clickhouse.com/docs/en/interfaces
 > MUST use directory `/var/lib/clickhouse/user-scripts` to store both user-scripts and executable udf
 
 
-### Use UDF
+### Usage
 ```
 SELECT v_sum(10, 20)
 
@@ -77,3 +81,6 @@ Query id: f98a5f83-4e94-41d0-9d9f-78b37d3af152
 
 1 rows in set. Elapsed: 0.006 sec. 
 ```
+
+
+> That's all it takes!
