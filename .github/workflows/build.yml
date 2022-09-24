@@ -23,7 +23,7 @@ jobs:
         v-version: latest
       id: v
     - name: Code Formatting
-      run: v fmt -w vlang-udf.v
+      run: v fmt -w udf.v
     - name: Build app
       run: v -o vlang-udf -prod .
     - name: Get Time
