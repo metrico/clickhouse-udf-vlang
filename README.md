@@ -22,10 +22,10 @@ fn main() {
         // Parse stdin to array
         data := os.get_lines()
         for line in data {
-           // split tabSeparated values
-           tags := line.split('\t')
+           // split tabSeparated columns
+           columns := line.split('\t')
            // sum two integers
-           sum := tags[0].int() + tags[1].int()
+           sum := columns[0].int() + columns[1].int()
            // return a result
            println(sum)
         }
