@@ -38,9 +38,9 @@ Compile and store into the ClickHouse UDF script directory:
 v -o /var/lib/clickhouse/user-scripts/vlang-udf -prod .
 ```
 
-The final static executable size is < ~92KB all inclusive!
+The final static executable size is < ~100KB all inclusive!
 ```
--rwxr-xr-x   1 root root  92K Mar 13 12:49 vlang-udf*
+-rwxr-xr-x   1 root root  98K Mar 13 12:49 vlang-udf*
 ```
 
 ### ClickHouse UDF
