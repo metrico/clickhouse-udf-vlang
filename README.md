@@ -11,7 +11,8 @@ This basic example illustrates a simple `sum` [V](https://vlang.io/) powered fun
 To get started, create an baseline vlang application with the following features:
 
 - [x] read input from stdin
-- [x] split row values by tabs
+- [x] parse tab separated columns
+- [ ] do something with data
 - [x] return some output
 
 Here's an example `sum` function:
@@ -82,5 +83,6 @@ Query id: f98a5f83-4e94-41d0-9d9f-78b37d3af152
 1 rows in set. Elapsed: 0.006 sec. 
 ```
 
+<br>
 
-> That's all it takes!
+That's all it takes! Go create your superfast v powered UDF function for fun and profit!
