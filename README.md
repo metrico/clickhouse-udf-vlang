@@ -1,14 +1,9 @@
-<img src="https://user-images.githubusercontent.com/1423657/147935343-598c7dfd-1412-4bad-9ac6-636994810443.png" width=220 >
+<img src="https://vlang.io/img/veasel.png" width=420>
 
-# ClickHouse V UDF
-This basic example illustrates a simple `sum` V powered Clickhouse UDF function
+# V ClickHouse UDF
+This basic example illustrates a simple `sum` [V](https://vlang.io/) powered [Clickhouse User Defined Function](https://clickhouse.com/docs/en/sql-reference/functions/#executable-user-defined-functions)
 
-##### ⏱️ Why
-> Clickhouse is super fast and already has all the functions one could dream. What is this for?
-
-This example is designed to understand the underlying formats and unleash imagination for integrators.
-
-<br><br>
+<br>
 
 ### V Function
 Create an simple vlang application:
@@ -44,8 +39,10 @@ The final executable size is < ~92KB all inclusive!
 ```
 
 ### ClickHouse UDF
-Create a [UDF Function](https://gist.github.com/lmangani/8beba125968c18c5531bcf2ef6e28dbe#file-vlang_function-xml) to invoke your [vlang application](https://gist.github.com/lmangani/8beba125968c18c5531bcf2ef6e28dbe#file-udf-v)
-- use directory `/var/lib/clickhouse/user-scripts` to store user-scripts
+Create a [UDF Function XML](https://clickhouse.com/docs/en/sql-reference/functions/#executable-user-defined-functions) to invoke your vlang binary
+
+Define the _input and output_ [format](https://clickhouse.com/docs/en/interfaces/formats) our function requires _(UInt64, string, etc)_
+
 ```
 <functions>
     <function>
@@ -64,6 +61,8 @@ Create a [UDF Function](https://gist.github.com/lmangani/8beba125968c18c5531bcf2
     </function>
 </functions>
 ```
+
+> MUST use directory `/var/lib/clickhouse/user-scripts` to store both user-scripts and executable udf
 
 
 ### Use UDF
