@@ -26,6 +26,8 @@ jobs:
       run: v fmt -w udf.v
     - name: Build app
       run: v -o vlang-udf -prod .
+    - name: Compress app
+      run: upx vlang-udf
     - name: Get Time
       if: github.event_name != 'pull_request'
       id: time
